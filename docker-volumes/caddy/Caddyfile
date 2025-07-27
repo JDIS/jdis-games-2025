@@ -1,0 +1,11 @@
+games.jdis.ca {
+    handle_path /ws {
+        reverse_proxy backend:32945
+    }
+
+    handle_path /ws-playground {
+        reverse_proxy backend-playground:32945
+    }
+
+    reverse_proxy frontend:3000
+}

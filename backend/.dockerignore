@@ -1,0 +1,8 @@
+target/
+.git/
+.vscode/
+Dockerfile
+docker-compose.yml
+README.md
+*.swp
+*.bak

@@ -1,0 +1,54 @@
+services:
+  backend:
+    build: ./backend
+    restart: unless-stopped
+    volumes:
+      - "./docker-volumes/backend/save.json:/app/save.json"
+      - "./docker-volumes/backend/config.json:/app/config.json"
+      - "./docker-volumes/backend/history:/app/history"
+    networks:
+      - jdis_games
+    tty: true
+    stdin_open: true
+
+  backend-playground:
+    build: ./backend
+    restart: unless-stopped
+    volumes:
+      - "./docker-volumes/backend-playground/save.json:/app/save.json"
+      - "./docker-volumes/backend-playground/config.json:/app/config.json"
+      - "./docker-volumes/backend-playground/history:/app/history"
+    networks:
+      - jdis_games
+    tty: true
+    stdin_open: true
+
+  frontend:
+    build: ./frontend
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    networks:
+      - jdis_games
+
+  caddy:
+    image: caddy:2.10.0-alpine
+    restart: unless-stopped
+    depends_on:
+      - backend
+      - frontend
+    networks:
+      - jdis_games
+    volumes:
+      - "./docker-volumes/caddy:/etc/caddy:ro"
+      - "caddy_data:/data"
+    ports:
+      - 80:80
+      - 443:443
+
+volumes:
+  caddy_data:
+
+networks:
+  jdis_games:
+    driver: bridge
