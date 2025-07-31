@@ -1,0 +1,380 @@
+{
+  "address": "0.0.0.0",
+  "port": 32945,
+  "log_level": "info",
+  "ranked": true,
+  "allow_single_player": false,
+  "firewall_damage": 10,
+  "damage_multiplier": 1.5,
+  "score": {
+    "victory": 150,
+    "kill_player": 40,
+    "break_wall": 1,
+    "use_buff": 2,
+    "loot_chest": 5,
+    "death_multiplier": 1.5,
+    "survive_10_ticks": 2,
+    "step_onto_trap": -10,
+    "get_killed_by_player": -30,
+    "get_killed_by_firewall": 0,
+    "get_killed_by_yourself": -75
+  },
+  "world_gen": {
+    "width": 125,
+    "height": 125,
+    "seed": null,
+    "firewall_speed" : 8,
+    "firewall_pattern": "fourCorner",
+    "chest_max_number": 300,
+    "wall_threshold": 0.4,
+    "via_threshold": -0.5,
+    "perlin_scale_1": 13.0,
+    "perlin_scale_2": 3.0,
+    "perlin_weight_1": 0.8,
+    "perlin_weight_2": 0.1,
+    "player_health": 100,
+    "player_items": [
+      {
+        "name": "Delete",
+        "cooldown": 6,
+        "quantity": null,
+        "drawWeight": 0.0,
+        "data": {
+          "type": "projectile",
+          "tickLifetime": 1,
+          "damage": 50,
+          "speed": 0,
+          "pattern": "single"
+        }
+      }
+    ],
+    "chest_items": [
+      {
+        "name": "SimpleResistance",
+        "cooldown": 0,
+        "quantity": 4,
+        "drawWeight": 10.0,
+        "data": {
+          "type": "placed",
+          "range": 4,
+          "object": {
+            "type": "wall"
+          },
+          "pattern": {
+            "type": "single"
+          }
+        }
+      },
+      {
+        "name": "Resistance",
+        "cooldown": 2,
+        "quantity": 2,
+        "drawWeight": 10.0,
+        "data": {
+          "type": "placed",
+          "range": 2,
+          "object": {
+            "type": "wall"
+          },
+          "pattern": {
+            "type": "rectangle",
+            "width": 3,
+            "height": 1
+          }
+        }
+      },
+      {
+        "name": "HugeResistance",
+        "cooldown": 4,
+        "quantity": 1,
+        "drawWeight": 7.0,
+        "data": {
+          "type": "placed",
+          "range": 2,
+          "object": {
+            "type": "wall"
+          },
+          "pattern": {
+            "type": "rectangle",
+            "width": 5,
+            "height": 2
+          }
+        }
+      },
+      {
+        "name": "DefensiveResistance",
+        "cooldown": 4,
+        "quantity": 1,
+        "drawWeight": 6.0,
+        "data": {
+          "type": "placed",
+          "range": 2,
+          "object": {
+            "type": "wall"
+          },
+          "pattern": {
+            "type": "box",
+            "radius": 1
+          }
+        }
+      },
+      {
+        "name": "WindowsDefender",
+        "cooldown": 1,
+        "quantity": 4,
+        "drawWeight": 9.0,
+        "data": {
+          "type": "placed",
+          "range": 2,
+          "object": {
+            "type": "trap",
+            "damage": 10
+          },
+          "pattern": {
+            "type": "single"
+          }
+        }
+      },
+      {
+        "name": "CrowdStrike",
+        "cooldown": 2,
+        "quantity": 4,
+        "drawWeight": 7.5,
+        "data": {
+          "type": "placed",
+          "range": 5,
+          "object": {
+            "type": "trap",
+            "damage": 5
+          },
+          "pattern": {
+            "type": "single"
+          }
+        }
+      },
+      {
+        "name": "FactoryReset",
+        "cooldown": 10,
+        "quantity": 1,
+        "drawWeight": 4.5,
+        "data": {
+          "type": "placed",
+          "range": 1,
+          "object": {
+            "type": "trap",
+            "damage": 40
+          },
+          "pattern": {
+            "type": "single"
+          }
+        }
+      },
+      {
+        "name": "McAfee",
+        "cooldown": 0,
+        "quantity": 1,
+        "drawWeight": 1.0,
+        "data": {
+          "type": "placed",
+          "range": 0,
+          "object": {
+            "type": "trap",
+            "damage": 1
+          },
+          "pattern": {
+            "type": "single"
+          }
+        }
+      },
+      {
+        "name": "Repair",
+        "cooldown": 2,
+        "quantity": 5,
+        "drawWeight": 9.0,
+        "data": {
+          "type": "buff",
+          "effect": "heal",
+          "power": 10
+        }
+      },
+      {
+        "name": "FullRepair",
+        "cooldown": 10,
+        "quantity": 1,
+        "drawWeight": 3.0,
+        "data": {
+          "type": "buff",
+          "effect": "heal",
+          "power": 100
+        }
+      },
+      {
+        "name": "RepairAndBuffer",
+        "cooldown": 10,
+        "quantity": 1,
+        "drawWeight": 2.0,
+        "data": {
+          "type": "buff",
+          "effect": "healAndShield",
+          "power": 100
+        }
+      },
+      {
+        "name": "Overclock",
+        "cooldown": 0,
+        "quantity": 2,
+        "drawWeight": 7.0,
+        "data": {
+          "type": "buff",
+          "effect": "haste",
+          "power": 10
+        }
+      },
+      {
+        "name": "Sudo",
+        "cooldown": 30,
+        "quantity": 2,
+        "drawWeight": 5.0,
+        "data": {
+          "type": "buff",
+          "effect": "damage",
+          "power": 30
+        }
+      },
+      {
+        "name": "CryptoMiner",
+        "cooldown": 0,
+        "quantity": 5,
+        "drawWeight": 4.0,
+        "data": {
+          "type": "buff",
+          "effect": "score",
+          "power": 10
+        }
+      },
+      {
+        "name": "Buffer",
+        "cooldown": 2,
+        "quantity": 5,
+        "drawWeight": 8.0,
+        "data": {
+          "type": "buff",
+          "effect": "shield",
+          "power": 15
+        }
+      },
+      {
+        "name": "FullBuffer",
+        "cooldown": 10,
+        "quantity": 1,
+        "drawWeight": 5.0,
+        "data": {
+          "type": "buff",
+          "effect": "shield",
+          "power": 100
+        }
+      },
+      {
+        "name": "Bluescreen",
+        "cooldown": 10,
+        "quantity": 1,
+        "drawWeight": 1.0,
+        "data": {
+          "type": "nuke",
+          "damage": 199
+        }
+      },
+      {
+        "name": "Multicast",
+        "cooldown": 3,
+        "quantity": 2,
+        "drawWeight": 6.0,
+        "data": {
+          "type": "projectile",
+          "tickLifetime": 2,
+          "damage": 20,
+          "speed": 1,
+          "pattern": "line"
+        }
+      },
+      {
+        "name": "Ping",
+        "cooldown": 5,
+        "quantity": 5,
+        "drawWeight": 6.0,
+        "data": {
+          "type": "projectile",
+          "tickLifetime": 15,
+          "damage": 20,
+          "speed": 1,
+          "pattern": "single"
+        }
+      },
+      {
+        "name": "ByteCannon",
+        "cooldown": 1,
+        "quantity": 12,
+        "drawWeight": 9.5,
+        "data": {
+          "type": "projectile",
+          "tickLifetime": 3,
+          "damage": 10,
+          "speed": 1,
+          "pattern": "single"
+        }
+      },
+      {
+        "name": "Cursor",
+        "cooldown": 4,
+        "quantity": 2,
+        "drawWeight": 7.5,
+        "data": {
+          "type": "projectile",
+          "tickLifetime": 5,
+          "damage": 15,
+          "speed": 1,
+          "pattern": "star"
+        }
+      },
+      {
+        "name": "DDoS",
+        "cooldown": 0,
+        "quantity": 25,
+        "drawWeight": 6.0,
+        "data": {
+          "type": "projectile",
+          "tickLifetime": 8,
+          "damage": 5,
+          "speed": 1,
+          "pattern": "single"
+        }
+      },
+      {
+        "name": "Broadcast",
+        "cooldown": 3,
+        "quantity": 3,
+        "drawWeight": 5.0,
+        "data": {
+          "type": "projectile",
+          "tickLifetime": 1,
+          "damage": 20,
+          "speed": 1,
+          "pattern": "box"
+        }
+      },
+      {
+        "name": "Flood",
+        "cooldown": 5,
+        "quantity": 1,
+        "drawWeight": 4.0,
+        "data": {
+          "type": "projectile",
+          "tickLifetime": 3,
+          "damage": 15,
+          "speed": 1,
+          "pattern": "box"
+        }
+      }
+    ]
+  }
+}

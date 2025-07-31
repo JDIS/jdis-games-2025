@@ -4,10 +4,11 @@ import argparse
 import matplotlib.pyplot as plt
 import matplotlib.dates as pltdates
 import numpy as np
+import datetime
 
 def gen_graph(x, ys, labels, title):
     fig, ax = plt.subplots(dpi=200, figsize=[19.20, 10.80])
-    ax.xaxis.set_major_formatter(pltdates.DateFormatter('%H:%M'))
+    ax.xaxis.set_major_formatter(pltdates.DateFormatter('%H:%M', tz=datetime.timezone(-datetime.timedelta(hours=4))))
     for y, label in zip(ys, labels):
         ax.plot(x, y, linewidth=2.0, label=label)
     ax.legend(loc='upper center', bbox_to_anchor=(0.5, -0.05), frameon=False, ncols=8)
